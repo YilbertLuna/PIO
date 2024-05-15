@@ -20,9 +20,9 @@ export default function Page() {
     return(
         
         <main className="flex flex-col items-center justify-between h-dvh bg-gradient-to-b from-gradient1 from-5% to-gradient2 to-90%">     
-            <div className="mt-11">
+            <figure className="mt-11">
                 <Image src="/PIO.png" alt="PIO logo" width={131} height={98}/>
-            </div>
+            </figure>
 
             <div className={`flex flex-col w-full bg-color1 py-7 space-y-12 rounded-t-[30px]`}>
                 
