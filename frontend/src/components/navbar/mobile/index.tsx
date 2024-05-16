@@ -11,32 +11,22 @@ export default function NavBarMovile(): JSX.Element {
   return (
     <nav className="flex flex-row justify-center items-center fixed bottom-0 w-full bg-color3 py-7 px-4 gap-14 text-white text-3xl">
       <Link href="/" className={`${pathname === '/' ? 'text-white' : 'text-slate-400'}`}>
-        <p>
           <FiHome />
-        </p>
       </Link>
       <Link href="/explore" className={`${pathname === '/search' ? 'text-white' : 'text-slate-400'}`}>
-        <p>
           <FiSearch />
-        </p>
       </Link>
 
       <Link href='/post'>
-        <p>
           <FiPlusCircle />
-        </p>
       </Link>
       
       <Link href='/notifications'>
-        <p>
           <FiHeart />
-        </p>
       </Link>
 
       <Link href="/profile" className={`${pathname === '/profile' ? 'text-white' : 'text-slate-400'}`}>
-        <p>
           <FiUser />
-        </p>
       </Link>
     </nav>
   )
