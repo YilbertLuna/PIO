@@ -4,9 +4,9 @@ export default function Layout({ children }: {
     children: React.ReactNode
   }) {
     return (
-      <section>
-        {children}
+      <section className="md:flex flex-row justify-between items-center w-full">
         <NavBar />
+        {children}
       </section>
     )
 }
