@@ -17,11 +17,11 @@ export default function NavBarMovile(): JSX.Element {
           <FiSearch />
       </Link>
 
-      <Link href='/post'>
+      <Link href='/newPost' className={`${pathname === '/newPost' ? 'text-white' : 'text-slate-400'}`}>
           <FiPlusCircle />
       </Link>
       
-      <Link href='/notifications'>
+      <Link href='/notifications' className={`${pathname === '/notifications' ? 'text-white' : 'text-slate-400'}`}>
           <FiHeart />
       </Link>
 
