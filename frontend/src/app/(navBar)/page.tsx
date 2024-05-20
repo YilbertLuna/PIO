@@ -13,9 +13,11 @@ export default function Home() {
         <div className='flex flex-col space-y-5 md:ml-40'>
           <Timeline className='ml-4'>
             <Timeline.Item>
-              <Timeline.Point />
               <Timeline.Content>
-                <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                <div className='flex flex-row gap-4'>
+                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                </div>
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
@@ -27,10 +29,12 @@ export default function Home() {
 
           <Timeline className='ml-4'>
             <Timeline.Item>
-              <Timeline.Point />
               <Timeline.Content>
-                <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                <p className="text-body-4 font-normal text-metal-600">
+                <div className='flex flex-row gap-4'>
+                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                </div>
+                  <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
               </Timeline.Content>
@@ -41,10 +45,12 @@ export default function Home() {
 
           <Timeline className='ml-4'>
             <Timeline.Item>
-              <Timeline.Point />
               <Timeline.Content>
-                <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                <p className="text-body-4 font-normal text-metal-600">
+                <div className='flex flex-row gap-4'>
+                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                </div>
+                  <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
               </Timeline.Content>
@@ -55,10 +61,12 @@ export default function Home() {
 
           <Timeline className='ml-4'>
             <Timeline.Item>
-              <Timeline.Point />
               <Timeline.Content>
-                <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                <p className="text-body-4 font-normal text-metal-600">
+                <div className='flex flex-row gap-4'>
+                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                </div>
+                  <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
               </Timeline.Content>
@@ -69,10 +77,12 @@ export default function Home() {
 
           <Timeline className='ml-4'>
             <Timeline.Item>
-              <Timeline.Point />
               <Timeline.Content>
-                <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                <p className="text-body-4 font-normal text-metal-600">
+                <div className='flex flex-row gap-4'>
+                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                </div>
+                  <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
               </Timeline.Content>
@@ -83,10 +93,12 @@ export default function Home() {
 
           <Timeline className='ml-4'>
             <Timeline.Item>
-              <Timeline.Point />
               <Timeline.Content>
-                <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                <p className="text-body-4 font-normal text-metal-600">
+                <div className='flex flex-row gap-4'>
+                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                </div>
+                  <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
               </Timeline.Content>
@@ -97,10 +109,12 @@ export default function Home() {
 
           <Timeline className='ml-4'>
             <Timeline.Item>
-              <Timeline.Point />
               <Timeline.Content>
-                <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                <p className="text-body-4 font-normal text-metal-600">
+                <div className='flex flex-row gap-4'>
+                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                </div>
+                  <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
               </Timeline.Content>
@@ -111,10 +125,12 @@ export default function Home() {
 
           <Timeline className='ml-4'>
             <Timeline.Item>
-              <Timeline.Point />
               <Timeline.Content>
-                <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                <p className="text-body-4 font-normal text-metal-600">
+                <div className='flex flex-row gap-4'>
+                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                </div>
+                  <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
               </Timeline.Content>
@@ -125,10 +141,12 @@ export default function Home() {
 
           <Timeline className='ml-4'>
             <Timeline.Item>
-              <Timeline.Point />
               <Timeline.Content>
-                <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                <p className="text-body-4 font-normal text-metal-600">
+                <div className='flex flex-row gap-4'>
+                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                </div>
+                  <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
               </Timeline.Content>
@@ -139,10 +157,12 @@ export default function Home() {
 
           <Timeline className='ml-4'>
             <Timeline.Item>
-              <Timeline.Point />
               <Timeline.Content>
-                <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                <p className="text-body-4 font-normal text-metal-600">
+                <div className='flex flex-row gap-4'>
+                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                </div>
+                  <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
               </Timeline.Content>
@@ -153,10 +173,12 @@ export default function Home() {
 
           <Timeline className='ml-4'>
             <Timeline.Item>
-              <Timeline.Point />
               <Timeline.Content>
-                <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                <p className="text-body-4 font-normal text-metal-600">
+                <div className='flex flex-row gap-4'>
+                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                </div>
+                  <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
               </Timeline.Content>
@@ -167,10 +189,12 @@ export default function Home() {
 
           <Timeline className='ml-4'>
             <Timeline.Item>
-              <Timeline.Point />
               <Timeline.Content>
-                <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                <p className="text-body-4 font-normal text-metal-600">
+                <div className='flex flex-row gap-4'>
+                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                </div>
+                  <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
               </Timeline.Content>
@@ -181,9 +205,11 @@ export default function Home() {
 
           <Timeline className='ml-4'>
             <Timeline.Item>
-              <Timeline.Point />
               <Timeline.Content>
-                <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                <div className='flex flex-row gap-4'>
+                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                </div>
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
