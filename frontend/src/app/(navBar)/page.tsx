@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex justify-center items-center w-full bg-color1 ">
-      <div className="flex flex-col items-center space-y-20">
-        <figure className="mt-10 md:ml-48">
+    <main className="flex justify-center items-center w-full">
+      <div className="flex flex-col items-center space-y-20 mb-10">
+        <figure className="flex justify-center items-center mt-10 ">
           <Image src="/PIO_Blanco.png" alt="PIO logo" width={50} height={50} />
         </figure>
 
@@ -64,6 +64,8 @@ export default function Home() {
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
+
+          <Divider className='my-4'/>
 
           <Timeline className='ml-4'>
             <Timeline.Item>
