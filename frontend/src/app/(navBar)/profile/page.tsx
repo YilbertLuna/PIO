@@ -8,7 +8,7 @@ export default function Profile(): JSX.Element {
     return(
         <div className="flex flex-col justify-center items-center mt-12 space-y-10">
             
-            <div className="fixed right-5 top-7">
+            <div className="fixed right-5 top-7 md:hidden">
                 <FiMenu className="text-2xl"/>
             </div>
            
@@ -27,7 +27,7 @@ export default function Profile(): JSX.Element {
                 <span className="bg-color2 rounded-xl p-4 text-lg font-semibold">edit profile</span>
             </div>
             
-            <div className="flex flex-col space-y-5">
+            <div className="flex flex-col space-y-5 md:ml-40">
                 <Timeline className='ml-4'>
                     <Timeline.Item>
                         <Timeline.Point />
