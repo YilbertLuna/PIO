@@ -13,7 +13,7 @@ export default function NavBarMovile(): JSX.Element {
       <Link href="/" className={`${pathname === '/' ? 'text-white' : 'text-slate-400'}`}>
           <FiHome />
       </Link>
-      <Link href="/explore" className={`${pathname === '/search' ? 'text-white' : 'text-slate-400'}`}>
+      <Link href="/explore" className={`${pathname === '/explore' ? 'text-white' : 'text-slate-400'}`}>
           <FiSearch />
       </Link>
 
