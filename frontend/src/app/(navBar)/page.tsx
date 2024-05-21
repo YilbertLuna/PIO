@@ -1,5 +1,6 @@
 'use client'
 import { Timeline, Divider } from 'keep-react'
+import { FiHeart } from "react-icons/fi";
 import Image from "next/image";
 
 export default function Home() {
@@ -21,13 +22,16 @@ export default function Home() {
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
+                <div className='flex flex-row items-center gap-2'>
+                  <FiHeart className='hover:text-red-600'/> <p>0</p>
+                </div>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
 
           <Divider className='my-4'/>
 
-          <Timeline className='ml-4'>
+           <Timeline className='ml-4'>
             <Timeline.Item>
               <Timeline.Content>
                 <div className='flex flex-row gap-4'>
@@ -37,13 +41,16 @@ export default function Home() {
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
+                <div className='flex flex-row items-center gap-2'>
+                  <FiHeart className='hover:text-red-600'/> <p>0</p>
+                </div>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
 
           <Divider className='my-4'/>
 
-          <Timeline className='ml-4'>
+           <Timeline className='ml-4'>
             <Timeline.Item>
               <Timeline.Content>
                 <div className='flex flex-row gap-4'>
@@ -53,13 +60,16 @@ export default function Home() {
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
+                <div className='flex flex-row items-center gap-2'>
+                  <FiHeart className='hover:text-red-600'/> <p>0</p>
+                </div>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
 
           <Divider className='my-4'/>
 
-          <Timeline className='ml-4'>
+           <Timeline className='ml-4'>
             <Timeline.Item>
               <Timeline.Content>
                 <div className='flex flex-row gap-4'>
@@ -69,13 +79,16 @@ export default function Home() {
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
+                <div className='flex flex-row items-center gap-2'>
+                  <FiHeart className='hover:text-red-600'/> <p>0</p>
+                </div>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
 
           <Divider className='my-4'/>
 
-          <Timeline className='ml-4'>
+           <Timeline className='ml-4'>
             <Timeline.Item>
               <Timeline.Content>
                 <div className='flex flex-row gap-4'>
@@ -85,13 +98,16 @@ export default function Home() {
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
+                <div className='flex flex-row items-center gap-2'>
+                  <FiHeart className='hover:text-red-600'/> <p>0</p>
+                </div>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
 
           <Divider className='my-4'/>
 
-          <Timeline className='ml-4'>
+           <Timeline className='ml-4'>
             <Timeline.Item>
               <Timeline.Content>
                 <div className='flex flex-row gap-4'>
@@ -101,13 +117,16 @@ export default function Home() {
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
+                <div className='flex flex-row items-center gap-2'>
+                  <FiHeart className='hover:text-red-600'/> <p>0</p>
+                </div>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
 
           <Divider className='my-4'/>
 
-          <Timeline className='ml-4'>
+           <Timeline className='ml-4'>
             <Timeline.Item>
               <Timeline.Content>
                 <div className='flex flex-row gap-4'>
@@ -117,13 +136,16 @@ export default function Home() {
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
+                <div className='flex flex-row items-center gap-2'>
+                  <FiHeart className='hover:text-red-600'/> <p>0</p>
+                </div>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
 
           <Divider className='my-4'/>
 
-          <Timeline className='ml-4'>
+           <Timeline className='ml-4'>
             <Timeline.Item>
               <Timeline.Content>
                 <div className='flex flex-row gap-4'>
@@ -133,13 +155,16 @@ export default function Home() {
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
+                <div className='flex flex-row items-center gap-2'>
+                  <FiHeart className='hover:text-red-600'/> <p>0</p>
+                </div>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
 
           <Divider className='my-4'/>
 
-          <Timeline className='ml-4'>
+           <Timeline className='ml-4'>
             <Timeline.Item>
               <Timeline.Content>
                 <div className='flex flex-row gap-4'>
@@ -149,13 +174,16 @@ export default function Home() {
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
+                <div className='flex flex-row items-center gap-2'>
+                  <FiHeart className='hover:text-red-600'/> <p>0</p>
+                </div>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
 
           <Divider className='my-4'/>
 
-          <Timeline className='ml-4'>
+           <Timeline className='ml-4'>
             <Timeline.Item>
               <Timeline.Content>
                 <div className='flex flex-row gap-4'>
@@ -165,13 +193,16 @@ export default function Home() {
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
+                <div className='flex flex-row items-center gap-2'>
+                  <FiHeart className='hover:text-red-600'/> <p>0</p>
+                </div>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
 
           <Divider className='my-4'/>
 
-          <Timeline className='ml-4'>
+           <Timeline className='ml-4'>
             <Timeline.Item>
               <Timeline.Content>
                 <div className='flex flex-row gap-4'>
@@ -181,13 +212,16 @@ export default function Home() {
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
+                <div className='flex flex-row items-center gap-2'>
+                  <FiHeart className='hover:text-red-600'/> <p>0</p>
+                </div>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
 
           <Divider className='my-4'/>
 
-          <Timeline className='ml-4'>
+           <Timeline className='ml-4'>
             <Timeline.Item>
               <Timeline.Content>
                 <div className='flex flex-row gap-4'>
@@ -197,13 +231,16 @@ export default function Home() {
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
+                <div className='flex flex-row items-center gap-2'>
+                  <FiHeart className='hover:text-red-600'/> <p>0</p>
+                </div>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
 
           <Divider className='my-4'/>
 
-          <Timeline className='ml-4'>
+           <Timeline className='ml-4'>
             <Timeline.Item>
               <Timeline.Content>
                 <div className='flex flex-row gap-4'>
@@ -213,6 +250,9 @@ export default function Home() {
                   <p className="text-body-4 font-normal text-metal-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
                 </p>
+                <div className='flex flex-row items-center gap-2'>
+                  <FiHeart className='hover:text-red-600'/> <p>0</p>
+                </div>
               </Timeline.Content>
             </Timeline.Item>
           </Timeline>
