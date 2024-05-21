@@ -13,7 +13,7 @@ export default function Profile(): JSX.Element {
             </div>
            
             <div className="flex flex-col w-full justify-center items-center space-y-4">
-                <div className="flex flex-row w-80 md:w-[400px] lg:w-[600px] justify-between items-center">
+                <div className="flex flex-row w-96 md:w-[400px] lg:w-[600px] justify-between items-center">
                     <div className="flex flex-col justify-center items-start">
                         <p className="text-xl font-medium">Yilbert Luna</p>
                         <p className="text-lg font-medium">Frontend Developer</p>
@@ -22,6 +22,11 @@ export default function Profile(): JSX.Element {
                     <figure>
                         <Image src="/FotoPerfil.jpg" alt="PIO logo" width={100} height={100} className="rounded-full"/>
                     </figure>
+                </div>
+
+                <div className="flex flex-row justify-center items-center w-full space-x-11">
+                    <p>Followers 0</p>
+                    <p>Following 0</p>
                 </div>
 
                 <span className="bg-color2 rounded-xl p-4 text-lg font-semibold">edit profile</span>
