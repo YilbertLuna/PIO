@@ -29,82 +29,82 @@ export default function Profile(): JSX.Element {
             
             <div className="flex flex-col space-y-5">
                 <Timeline className='ml-4'>
-            <Timeline.Item>
-              <Timeline.Content>
-                <div className='flex flex-row gap-4'>
-                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
-                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                </div>
-                  <p className="text-body-4 font-normal text-metal-600">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
-                </p>
-              </Timeline.Content>
-            </Timeline.Item>
-          </Timeline>
+                  <Timeline.Item>
+                    <Timeline.Content>
+                      <div className='flex flex-row gap-4'>
+                        <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                        <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                      </div>
+                        <p className="text-body-4 font-normal text-metal-600">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
+                      </p>
+                    </Timeline.Content>
+                  </Timeline.Item>
+                </Timeline>
 
                 <Divider className='my-4'/>
 
                 <Timeline className='ml-4'>
-            <Timeline.Item>
-              <Timeline.Content>
-                <div className='flex flex-row gap-4'>
-                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
-                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                </div>
-                  <p className="text-body-4 font-normal text-metal-600">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
-                </p>
-              </Timeline.Content>
-            </Timeline.Item>
-          </Timeline>
+                    <Timeline.Item>
+                      <Timeline.Content>
+                        <div className='flex flex-row gap-4'>
+                          <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                          <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                        </div>
+                          <p className="text-body-4 font-normal text-metal-600">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
+                        </p>
+                      </Timeline.Content>
+                    </Timeline.Item>
+                  </Timeline>
 
                 <Divider className='my-4'/>
 
                 <Timeline className='ml-4'>
-            <Timeline.Item>
-              <Timeline.Content>
-                <div className='flex flex-row gap-4'>
-                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
-                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                </div>
-                  <p className="text-body-4 font-normal text-metal-600">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
-                </p>
-              </Timeline.Content>
-            </Timeline.Item>
-          </Timeline>
+                    <Timeline.Item>
+                      <Timeline.Content>
+                        <div className='flex flex-row gap-4'>
+                          <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                          <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                        </div>
+                          <p className="text-body-4 font-normal text-metal-600">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
+                        </p>
+                      </Timeline.Content>
+                    </Timeline.Item>
+                  </Timeline>
 
                 <Divider className='my-4'/>
 
                 <Timeline className='ml-4'>
-            <Timeline.Item>
-              <Timeline.Content>
-                <div className='flex flex-row gap-4'>
-                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
-                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                </div>
-                  <p className="text-body-4 font-normal text-metal-600">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
-                </p>
-              </Timeline.Content>
-            </Timeline.Item>
-          </Timeline>
+                    <Timeline.Item>
+                      <Timeline.Content>
+                        <div className='flex flex-row gap-4'>
+                          <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                          <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                        </div>
+                          <p className="text-body-4 font-normal text-metal-600">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
+                        </p>
+                      </Timeline.Content>
+                    </Timeline.Item>
+                  </Timeline>
 
                 <Divider className='my-4'/>
 
                 <Timeline className='ml-4'>
-            <Timeline.Item>
-              <Timeline.Content>
-                <div className='flex flex-row gap-4'>
-                  <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
-                  <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
-                </div>
-                  <p className="text-body-4 font-normal text-metal-600">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
-                </p>
-              </Timeline.Content>
-            </Timeline.Item>
-          </Timeline>
+                    <Timeline.Item>
+                      <Timeline.Content>
+                        <div className='flex flex-row gap-4'>
+                          <Image src="/FotoPerfil.jpg" alt="PIO logo" width={30} height={30} className='rounded-full' />
+                          <p className="leading-[1.4]  text-metal-700 text-xl font-semibold">Yilbert Luna | September 23,2022</p>
+                        </div>
+                          <p className="text-body-4 font-normal text-metal-600">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt.
+                        </p>
+                      </Timeline.Content>
+                    </Timeline.Item>
+                  </Timeline>
             </div>
 
         </div>
