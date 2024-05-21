@@ -1,8 +1,9 @@
 'use client'
 
 import Link from "next/link";
-import { FiHome, FiSearch, FiPlusCircle, FiHeart, FiUser } from "react-icons/fi";
+import { FiHome, FiSearch, FiHeart, FiUser } from "react-icons/fi";
 import { usePathname } from "next/navigation";
+import ModalComponent from "@/components/modal";
 
 export default function NavBarMovile(): JSX.Element {
 
@@ -17,9 +18,7 @@ export default function NavBarMovile(): JSX.Element {
           <FiSearch />
       </Link>
 
-      <Link href='/newPost' className={`${pathname === '/newPost' ? 'text-white' : 'text-slate-400'}`}>
-          <FiPlusCircle />
-      </Link>
+      <ModalComponent />
       
       <Link href='/notifications' className={`${pathname === '/notifications' ? 'text-white' : 'text-slate-400'}`}>
           <FiHeart />

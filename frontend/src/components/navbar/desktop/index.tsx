@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { FiHome, FiSearch, FiPlusCircle, FiHeart, FiUser } from "react-icons/fi";
 import { Sidebar, Divider } from 'keep-react'
+import ModalComponent from '@/components/modal';
 
 export default function NavBarDesktop(): JSX.Element {
 
@@ -27,12 +28,14 @@ export default function NavBarDesktop(): JSX.Element {
                 </Sidebar.Item>
 
                 <Sidebar.Item>
-                    <Link href="/post" className={`${pathname === '/post' ? 'text-white' : 'text-slate-400'} flex items-center gap-2 `}>
-                        <FiPlusCircle className='text-3xl' />New 
-                        post
-                    </Link>
+                    <span className='flex items-center gap-2 text-slate-400 '>
+                        <span className='text-3xl'>
+                            <ModalComponent />
+                        </span>
+                        New post
+                    </span>
                 </Sidebar.Item>
-
+                
                 <Sidebar.Item>
                     <Link href="/notifications" className={`${pathname === '/notifications' ? 'text-white' : 'text-slate-400'} flex items-center gap-2 `}>
                         <FiHeart className='text-3xl' />
