@@ -6,8 +6,8 @@ export default function Layout({ children }: {
   }) {
     return (
       <section>
-        <Setings />
         {children}
+        <Setings />
         <NavBar />
       </section>
     )
