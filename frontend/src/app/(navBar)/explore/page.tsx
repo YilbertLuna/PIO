@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function Explore(): JSX.Element {
     return(
-        <main className="flex flex-col space-y-10 md:ml-40 ml-4 mr-4 mt-20">
+        <main className="flex flex-col justify-center items-center space-y-10 md:ml-40 ml-4 mr-4 mt-20">
 
             <div className="flex justify-center items-center mt-10">
                 <div className="relative h-10 w-72 ">
@@ -11,7 +11,7 @@ export default function Explore(): JSX.Element {
                 </div>
             </div>
 
-            <div className="flex flex-col justify-center items-center w-full space-y-5 ">
+            <div className="flex flex-col justify-center items-center w-80 sm:w-[460px] space-y-5 shadow-md p-10 rounded-xl bg-clip-border bg-color1">
                 <div className="flex flex-row justify-between items-center w-72 ">
                     <figure>
                         <Image src="/FotoPerfil.jpg" alt="foto perfil" width={50} height={50} className="rounded-full"/>
