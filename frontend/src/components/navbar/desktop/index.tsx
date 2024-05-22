@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
-import { FiHome, FiSearch, FiPlusCircle, FiHeart, FiUser } from "react-icons/fi";
+import { FiHome, FiSearch, FiHeart, FiUser } from "react-icons/fi";
 import { Sidebar, Divider } from 'keep-react'
 import ModalComponent from '@/components/modal';
 

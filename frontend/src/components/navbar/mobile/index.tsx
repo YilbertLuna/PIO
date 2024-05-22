@@ -10,7 +10,7 @@ export default function NavBarMovile(): JSX.Element {
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-row justify-center items-center fixed bottom-0 w-full bg-color3 py-7 px-4 gap-14 text-white text-3xl">
+    <nav className="flex flex-row justify-between items-center fixed bottom-0 w-full bg-color3 py-7 px-4 text-white text-3xl mr-4">
       <Link href="/" className={`${pathname === '/' ? 'text-white' : 'text-slate-400'}`}>
           <FiHome />
       </Link>
