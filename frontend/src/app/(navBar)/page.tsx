@@ -4,15 +4,11 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-col space-y-10 md:ml-40 ml-4 mr-4">
+    <main className="flex flex-col space-y-10 md:ml-40 ml-4 mr-4 mt-28">
       
       <div className="flex flex-col items-center space-y-9 mb-10">
-        
-        <figure className="flex justify-center items-center mt-10">
-          <Image src="/PIO_Blanco.png" alt="PIO logo" width={50} height={50} />
-        </figure>
 
-        <div className="flex flex-col justify-center items-center w-full space-y-5 ">
+        <div className="flex flex-col justify-center items-center w-full space-y-5 shadow-md p-10 rounded-xl bg-clip-border">
           <div className="w-full md:w-96 lg:w-[460px]">
             <div className="relative flex flex-col gap-2">
               <div className="flex items-center gap-4">

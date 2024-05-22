@@ -2,15 +2,10 @@
 
 import Image from "next/image"
 import { FiHeart } from "react-icons/fi";
-import { FiMenu } from "react-icons/fi";
 
 export default function Profile(): JSX.Element {
     return(
-        <div className="flex flex-col mt-12 space-y-10 md:ml-40 ml-4 mr-4">
-            
-            <div className="flex justify-end items-end md:hidden">
-                  <FiMenu className="text-2xl"/>
-            </div>
+        <div className="flex flex-col space-y-10 md:ml-40 ml-4 mr-4 mt-20">
            
             <div className="flex flex-col w-full justify-center items-center space-y-4">
                 <div className="flex flex-row w-full md:w-[400px] lg:w-[600px] justify-between items-center">

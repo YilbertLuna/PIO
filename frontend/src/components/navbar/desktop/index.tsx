@@ -46,11 +46,17 @@ export default function NavBarDesktop(): JSX.Element {
 
             <Divider className="my-4" />
             
-            <Sidebar.Footer className="flex items-center gap-2">
+            <Sidebar.Footer className="flex flex-col justify-between items-start gap-2">
                 <Sidebar.Item>
                     <Link href="/profile" className={`${pathname === '/profile' ? 'text-white' : 'text-slate-400'} flex items-center gap-2 `}>
                         <FiUser className='text-3xl' />
                         Profile
+                    </Link>
+                </Sidebar.Item>
+
+                <Sidebar.Item>
+                    <Link href="/login" className={`${pathname === '/login'? 'text-white' : 'text-slate-400'} flex items-center gap-2 `}>
+                        Log out
                     </Link>
                 </Sidebar.Item>
             </Sidebar.Footer>

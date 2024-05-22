@@ -4,7 +4,7 @@ export default function Notifications(): JSX.Element {
     return(
         <div className="flex flex-col space-y-10 md:ml-40 ml-4 mr-4 mt-14">
 
-            <div className="flex flex-col justify-center items-center w-full space-y-5">
+            <div className="flex flex-col justify-center items-center w-full space-y-5 mt-20">
 
                 <div className="flex flex-col justify-center items-center w-full md:w-96 lg:w-[460px] space-y-8">
                     <div className="flex flex-row justify-center items-center gap-2 w-full">

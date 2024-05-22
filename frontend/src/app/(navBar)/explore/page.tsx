@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function Explore(): JSX.Element {
     return(
-        <main className="flex flex-col space-y-10 md:ml-40 ml-4 mr-4">
+        <main className="flex flex-col space-y-10 md:ml-40 ml-4 mr-4 mt-20">
 
             <div className="flex justify-center items-center mt-10">
                 <div className="relative h-10 w-72 ">
