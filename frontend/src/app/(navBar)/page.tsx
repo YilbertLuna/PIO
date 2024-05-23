@@ -4,9 +4,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-col space-y-10 md:ml-40 ml-4 mr-4 mt-28">
-      
-      <div className="flex flex-col items-center space-y-9 mb-10">
+    <main className="flex flex-col justify-center items-center space-y-10 md:ml-40 ml-4 mr-4 mt-28">
 
         <div className="flex flex-col justify-center items-center w-80 sm:w-[460px] space-y-5 shadow-md p-10 rounded-xl bg-clip-border bg-color1">
             
@@ -56,7 +54,6 @@ export default function Home() {
 
         </div>
 
-      </div>
 
     </main>
   );
