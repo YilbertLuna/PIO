@@ -39,7 +39,7 @@ export default function NavBarDesktop(): JSX.Element {
                 <Sidebar.Item>
                     <Link href="/notifications" className={`${pathname === '/notifications' ? 'text-white' : 'text-slate-400'} flex items-center gap-2 `}>
                         <FiHeart className='text-3xl' />
-                        Notifiactions
+                        notifications
                     </Link>
                 </Sidebar.Item>
             </Sidebar.Body>
