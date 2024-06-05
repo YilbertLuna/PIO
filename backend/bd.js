@@ -8,12 +8,3 @@ export const sequelize = new Sequelize({
     username: 'admin',
     password: 'admin',
 })
-
-export const connectDb = async () => {
-    try {
-        await sequelize.authenticate()
-        console.log('database connected successfully 🟢')
-    } catch (error) {
-        console.log(`there is an error 🔴 ${error}`)
-    }
-}
