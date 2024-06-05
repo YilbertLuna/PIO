@@ -1,21 +1,17 @@
 import 'dotenv/config'
 import app from './src/server.js'
-import { connectDb } from './bd.js'
 import { sequelize } from './bd.js'
 
-async function initdb() {
-    connectDb()
-    await sequelize.sync()
-}
-
-await initdb()
-
-const serverRun = () => {
-
+const serverRun = async () => {
     app.listen(process.env.PORT, () => {
         console.log(`server is running successfully 🟢 on port ${process.env.PORT}`)
     })
-
+    try{    
+        await sequelize.authenticate()
+        console.log('Connection has ben established successfully 🟢')
+    }catch(e){
+        console.log('Unable to connect to database 🔴')
+    }
 }
 
 serverRun()
