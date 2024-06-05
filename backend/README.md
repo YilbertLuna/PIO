@@ -1,13 +1,31 @@
-## Installed dependencies
 
-``` bash
-    npm install
-    #or
-    npm i
-```
+# Bakend PIO
+This backend is a REST API, with functionality for user registration and creation of user posts.
 
-## runing backend
+## Run Locally
+
+**Download project**
+
+Go to the project directory
 
 ```bash
-    npm run dev
+  cd backend
 ```
+
+Install dependencies
+
+```bash
+  npm install
+  # or
+  npm i
+```
+
+## DataBase
+the DataBase do i use is PostgreSql
+
+## DataBase info
+**POSTGRES_PASSWORD:** admin
+
+**POSTGRES_USER:** admin
+
+**POSTGRES_DB:** pio
