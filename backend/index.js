@@ -11,7 +11,7 @@ const serverRun = async () => {
     })
     try{    
         await sequelize.authenticate()
-        await sequelize.sync({force: true})
+        await sequelize.sync({force: false})
         console.log('Connection has ben established successfully 🟢')
     }catch(e){
         console.log('Unable to connect to database 🔴')
