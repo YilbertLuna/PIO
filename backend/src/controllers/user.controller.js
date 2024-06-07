@@ -1,69 +1,40 @@
-const USERS = []
+import { users } from '../models/user.js'
 
-export const register = (req, res) => {
-    
-    const { name, email, password} = req.body
+export const register = async (req, res) => {
 
     try {
-        
+        const { name, email, password } = req.body
+
         // validate data
-        if(!name ||!email ||!password) return res.status(400).json({'error': 'please fill all fields 🟡'})
+        if(!name | !email | !password) return res.status(403).json({error: 'Fill in the fields'})
 
         // validate email
-        if(USERS.find(user => user.email === email)) return res.status(400).json({'error': 'user already exists 🟡'})
+        const user = await users.findOne({
+            where: {
+                email: email
+            }
+        })
 
-        // create user and save
-        const newUser = {
+        if(user) return res.status(403).json({error: 'User already exists'})
+
+        // create user
+        const newUser = await users.create({
             name: name,
             email: email,
-            password:  password,
-        }
+            password: 123
+        })
 
-        USERS.push(newUser)
-
-        console.log('Added user successfully 🟢')
-
-        res.status(200)
-        res.json({
+        res.status(201).json({
+            id: newUser.id,
             name: newUser.name,
             email: newUser.email,
-            password:  newUser.password,
+            password: 123,
+            followers: newUser.followers,
+            following: newUser.following
         })
 
     } catch (error) {
-        res.status(500).json({'error': `there is an error 🔴 ${error}`})
+        res.status(400).json({ error: error})
     }
-    
-}
-
-export const login = (req, res) => {
-
-    const { email, password } = req.body
-    
-    try {
-
-        // validate data
-        if(!email ||!password) return res.status(400).json({'error': 'please fill all fields 🟡'})
-
-        const user = {
-            email: email,
-            password: password,
-        }
-        
-        const foundUser = USERS.find(userFound => userFound.email === user.email)
-
-        if(foundUser) {
-            console.log('found user successfully 🟢')
-            res.status(200).json({foundUser: foundUser})
-        } else {
-            console.log('user not found 🔴')
-            res.send('user not found')
-        }
-
-        
-    } catch (error) {
-         res.status(400).json({ error: `there is an error 🔴 ${error}`})        
-    }
-
 
 }
