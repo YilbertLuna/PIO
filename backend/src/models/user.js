@@ -2,16 +2,16 @@
 
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../../bd.js';
-import { publications } from './ publications.js';
+import { publications } from './publications.js';
 
 export const users = sequelize.define(
     'Users',
 
     {
         id:{
-            type: DataTypes.INTEGER,
+            type: DataTypes.UUID,
             primaryKey: true,
-            autoIncrement: true,
+            defaultValue: DataTypes.UUIDV4
         },
         name: {
             type: DataTypes.STRING

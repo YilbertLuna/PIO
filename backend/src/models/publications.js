@@ -8,9 +8,9 @@ export const publications = sequelize.define(
 
     {
         id:{
-            type: DataTypes.INTEGER,
+            type: DataTypes.UUID,
             primaryKey: true,
-            autoIncrement: true,
+            defaultValue: DataTypes.UUIDV4
         },
         content: {
             type: DataTypes.STRING
