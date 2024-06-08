@@ -22,6 +22,9 @@ export const users = sequelize.define(
         password: {
             type: DataTypes.STRING
         },
+        bio: {
+            type: DataTypes.STRING
+        },
         followers: {
             type: DataTypes.INTEGER,
             defaultValue: 0
