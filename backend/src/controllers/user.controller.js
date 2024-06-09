@@ -21,14 +21,14 @@ export const register = async (req, res) => {
         const newUser = await users.create({
             name: name,
             email: email,
-            password: 123
+            password: password
         })
 
         res.status(201).json({
             id: newUser.id,
             name: newUser.name,
             email: newUser.email,
-            password: 123,
+            password: newUser.password,
             followers: newUser.followers,
             following: newUser.following
         })
