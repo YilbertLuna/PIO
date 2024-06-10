@@ -55,6 +55,7 @@ export const login = async (req, res) => {
             }
         })
 
+        // validate if user exists
         if(!findUser) res.status(404).json({error: 'User dont exist'})
         
         res.status(200).json({welcome: findUser.name})
