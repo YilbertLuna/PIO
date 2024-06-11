@@ -1,4 +1,5 @@
 import { users } from '../models/user.js'
+import bcrypt from "bcryptjs"
 
 export const register = async (req, res) => {
 
@@ -17,20 +18,21 @@ export const register = async (req, res) => {
 
         if(user) return res.status(403).json({error: 'User already exists'})
 
+        const cryptPassword = await bcrypt.hash(password, 10)
+
         // create user
         const newUser = await users.create({
             name: name,
             email: email,
-            password: password
+            password: cryptPassword
         })
 
         res.status(201).json({
             id: newUser.id,
             name: newUser.name,
             email: newUser.email,
-            password: newUser.password,
             followers: newUser.followers,
-            following: newUser.following
+            following: newUser.following,
         })
 
     } catch (error) {
@@ -47,18 +49,28 @@ export const login = async (req, res) => {
 
         // validate data
         if(!email | !password) return res.status(403).json({error: 'Fill in the fields'})
-        
+
+        // validate password
         const findUser = await users.findOne({
             where: {
                 email: email,
-                password: password
             }
         })
 
-        // validate if user exists
-        if(!findUser) res.status(404).json({error: 'User dont exist'})
+        if(!findUser) return res.status(400).json({error: 'email is dont exist'})
+
+        const isPassword = await bcrypt.compare(password, findUser.password)
+
+        if(!isPassword) return res.status(400).json({error: 'password is invalid'})
         
-        res.status(200).json({welcome: findUser.name})
+        res.status(200).json({
+            id: findUser.id,
+            name: findUser.name,
+            email: findUser.email,
+            followers: findUser.followers,
+            following: findUser.following,
+            created_at: findUser.createdAt
+        })
 
     } catch (error) {
         res.status(400).json({ error: error})
