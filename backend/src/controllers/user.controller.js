@@ -1,5 +1,6 @@
 import { users } from '../models/user.js'
 import bcrypt from "bcryptjs"
+import { createdAccessToken } from '../libs/jwt.js'
 
 export const register = async (req, res) => {
 
@@ -27,6 +28,11 @@ export const register = async (req, res) => {
             password: cryptPassword
         })
 
+        // created token
+        const token = await createdAccessToken({id: newUser.id})
+        //save token on cookie
+        res.cookie('token', token)
+
         res.status(201).json({
             id: newUser.id,
             name: newUser.name,
@@ -53,7 +59,7 @@ export const login = async (req, res) => {
         // validate password
         const findUser = await users.findOne({
             where: {
-                email: email,
+                email: email
             }
         })
 
@@ -62,6 +68,11 @@ export const login = async (req, res) => {
         const isPassword = await bcrypt.compare(password, findUser.password)
 
         if(!isPassword) return res.status(400).json({error: 'password is invalid'})
+        
+        // created token
+        const token = await createdAccessToken({id: findUser.id})
+        // save token on cookie
+        res.cookie('token', token)
         
         res.status(200).json({
             id: findUser.id,
@@ -76,6 +87,30 @@ export const login = async (req, res) => {
         res.status(400).json({ error: error})
     }
 }
+
+export const profile = async (req, res) => {
+
+    const userFound = await users.findOne({
+        where: {
+            id: req.User.id
+        }
+    })
+
+    if(!userFound) return res.status(404).json({ error: 'User not found' })
+
+    return res.status(200).json({ userFound: userFound })
+}
+
+export const logout = (req, res) => {
+
+    // delete token on cookie
+    res.cookie('token', '', {
+        expires: new Date(0)
+    })
+
+    res.sendStatus(200)
+}
+
 
 export const getUsers = async (req, res) => {
     try {
