@@ -4,7 +4,7 @@ type props = {
     active: boolean,
 }
 
-import Input from "@/components/Input"
+import { Input } from "@/components/Input"
 
 export default function Login( {active}: props ) {
 
