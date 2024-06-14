@@ -23,7 +23,8 @@ export default function Login( {active}: props ) {
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
-            }
+            },
+            credentials: 'include'
         })
 
         const result = await res.json()

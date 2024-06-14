@@ -21,7 +21,8 @@ export default function Register({active}: props) {
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
-            }
+            },
+            credentials: 'include'
         })
 
         await res.json()
