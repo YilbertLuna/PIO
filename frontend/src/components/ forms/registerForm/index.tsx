@@ -36,29 +36,32 @@ export default function Register({active}: props) {
         <div className={` ${!active ? 'w-0' : 'w-full'} flex flex-col justify-center items-center left-0 rigth-90 transition-all duration-300`}>
             <form onSubmit={onSubmit} className={`${active ? '' : 'hidden'} flex flex-col space-y-10`}>
 
-                
-                <div className="flex flex-col">
-                    <Input type="text" placeholder="Enter name"  {...register("name", {
-                        required: true
-                    })}/>
-                    {errors.name && <span className="text-red-600">The name is required</span>}
-                </div>
-
-               <div className="flex flex-col">
-                <Input type="text" placeholder="Enter email" {...register("email", {
-                        required: true
-                    })}/>
-                    {errors.email && <span className="text-red-600">The email is required</span>}
-               </div>
-
-                <div className="flex flex-col">
-                    <Input type="text" placeholder="Enter password" {...register("password", {
-                        required: true
-                    })}/>
-                    {errors.password && <span className="text-red-600">The password is required</span>}
-                </div>
-
                 {err && <span className="text-center font-semibold text-slate-500">The email is already in use</span>}
+                
+                <div className="flex flex-col space-y-2">
+
+                    <div className="flex flex-col">
+                        <Input type="text" placeholder="Enter name"  {...register("name", {
+                            required: true
+                        })}/>
+                        {errors.name && <span className="text-red-600">The name is required</span>}
+                    </div>
+
+                    <div className="flex flex-col">
+                        <Input type="text" placeholder="Enter email" {...register("email", {
+                            required: true
+                        })}/>
+                        {errors.email && <span className="text-red-600">The email is required</span>}
+                    </div>
+
+                    <div className="flex flex-col">
+                        <Input type="text" placeholder="Enter password" {...register("password", {
+                            required: true
+                        })}/>
+                        {errors.password && <span className="text-red-600">The password is required</span>}
+                    </div>
+
+                </div>
 
                 <button type="submit" className="bg-color2 rounded-3xl p-4 font-medium text-xl">Sing up</button>
             </form>
