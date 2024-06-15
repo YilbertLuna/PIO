@@ -29,3 +29,10 @@ the DataBase do i use is PostgreSql
 **POSTGRES_USER:** admin
 
 **POSTGRES_DB:** pio
+
+
+## running docker
+
+```bash
+  docker-compose -f compose.yaml up
+```
