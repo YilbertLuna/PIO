@@ -1,7 +1,7 @@
 'use client'
 
-import Login from "@/components/ forms/loginForm"
-import Register from "@/components/ forms/registerForm"
+import Login from "@/components/forms/loginForm"
+import Register from "@/components/forms/registerForm"
 import Image from "next/image"
 import { useState } from "react"
 

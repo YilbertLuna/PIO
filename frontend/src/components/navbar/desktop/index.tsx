@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { FiHome, FiSearch, FiHeart, FiUser } from "react-icons/fi";
 import { Sidebar, Divider } from 'keep-react'
 import ModalComponent from '@/components/modal';
+import ButtonLogout from '@/components/logout';
 
 export default function NavBarDesktop(): JSX.Element {
 
@@ -55,9 +56,10 @@ export default function NavBarDesktop(): JSX.Element {
                 </Sidebar.Item>
 
                 <Sidebar.Item>
-                    <Link href="/login" className={`${pathname === '/login'? 'text-white' : 'text-slate-400'} flex items-center gap-2 `}>
-                        Log out
-                    </Link>
+                    {/* <Link href="/login" className={`${pathname === '/login'? 'text-white' : 'text-slate-400'} flex items-center gap-2 `}>
+                        <ButtonLogout />
+                    </Link> */}
+                    <ButtonLogout />
                 </Sidebar.Item>
             </Sidebar.Footer>
         </Sidebar>

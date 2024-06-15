@@ -1,6 +1,5 @@
 import { FiX } from "react-icons/fi";
-import Link from "next/link";
-
+import ButtonLogout from "@/components/logout";
 
 type props = {
     active: boolean
@@ -20,9 +19,7 @@ export function Menu({ active, setActive }: props) {
                     <FiX />
                 </span>
                 
-                <Link href="/login">
-                    log out
-                </Link>
+                <ButtonLogout/>
             </div>
         </div>
     )
