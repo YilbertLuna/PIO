@@ -35,6 +35,8 @@ export default function Login( {active}: props ) {
         }
         if(res.ok) router.push('/')
 
+        router.refresh()
+
     })
 
 

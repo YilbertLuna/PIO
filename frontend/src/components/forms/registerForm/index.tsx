@@ -31,6 +31,8 @@ export default function Register({active}: props) {
         
         if(res.ok) router.push('/')
 
+        router.refresh()
+
     })
 
     return(
