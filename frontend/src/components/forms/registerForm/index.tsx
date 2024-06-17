@@ -37,36 +37,65 @@ export default function Register({active}: props) {
 
     return(
         <div className={` ${!active ? 'w-0' : 'w-full'} flex flex-col justify-center items-center left-0 rigth-90 transition-all duration-300`}>
-            <form onSubmit={onSubmit} className={`${active ? '' : 'hidden'} flex flex-col space-y-10`}>
+            <form onSubmit={onSubmit} className={`${active ? '' : 'hidden'} flex flex-col space-y-2 py-10`}>
 
                 {err && <span className="text-center font-semibold text-slate-500">The email is already in use</span>}
                 
-                <div className="flex flex-col space-y-2">
-
-                    <div className="flex flex-col">
-                        <Input type="text" placeholder="Enter name"  {...register("name", {
+                <div>
+                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                        User name
+                    </label>
+                    <div className="mt-2">
+                        <Input
+                        type="text"
+                        {...register("name", {
                             required: true
-                        })}/>
-                        {errors.name && <span className="text-red-600">The name is required</span>}
+                        })}
+                        />
                     </div>
-
-                    <div className="flex flex-col">
-                        <Input type="text" placeholder="Enter email" {...register("email", {
+                    {errors.email && <p className="text-red-600">email is required</p>}
+                </div>
+                <div>
+                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                        Email address
+                    </label>
+                    <div className="mt-2">
+                        <Input
+                        type="text"
+                        {...register("email", {
                             required: true
-                        })}/>
-                        {errors.email && <span className="text-red-600">The email is required</span>}
+                        })}
+                        />
                     </div>
-
-                    <div className="flex flex-col">
-                        <Input type="text" placeholder="Enter password" {...register("password", {
-                            required: true
-                        })}/>
-                        {errors.password && <span className="text-red-600">The password is required</span>}
-                    </div>
-
+                    {errors.email && <p className="text-red-600">email is required</p>}
                 </div>
 
-                <button type="submit" className="bg-color2 rounded-3xl p-4 font-medium text-xl">Sing up</button>
+                <div>
+                    <div className="flex items-center justify-between">
+                        <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                        Password
+                        </label>
+                    </div>
+                    <div className="mt-2">
+                        <Input
+                        type="text"
+                        {...register("password", {
+                            required: true
+                        })}
+                        />
+                    </div>
+                    {errors.password && <p className="text-red-600">password is required</p>}
+                </div>
+
+                <div>
+                    <button
+                        type="submit"
+                        className="flex w-80 justify-center rounded-md bg-color2 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-color3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                        Sign in
+                    </button>
+                </div>
+
             </form>
         </div>
     )

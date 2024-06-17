@@ -41,30 +41,51 @@ export default function Login( {active}: props ) {
 
 
     return(
+        
         <div className={` ${active ? 'w-0' : 'w-full'} flex flex-col justify-center items-center left-90 right-0 transition-all duration-300`}>
-            <form onSubmit={onSubmit} className={`${active ? 'hidden' : ''} flex flex-col space-y-10`}>
-
+            <form className={`${active ? 'hidden' : ''} flex flex-col space-y-10`} onSubmit={onSubmit}>
                 {err && <span className="text-center font-semibold text-slate-500">{typeError}</span>}
 
-                <div className="flex flex-col space-y-7">
-                    
-                    <div>
-                        <Input type="text" placeholder="Email address" {...register("email", {
+                <div>
+                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                        Email address
+                    </label>
+                    <div className="mt-2">
+                        <Input
+                        id="email"
+                        {...register("email", {
                             required: true
                         })}/>
-                        {errors.email && <p className="text-red-600">email is required</p>}
                     </div>
-
-                    <div>
-                        <Input type="password" placeholder="Password" {...register("password", {
-                            required: true
-                        })}/>
-                        {errors.password && <p className="text-red-600">password is required</p>}
-                    </div>
-
+                    {errors.email && <p className="text-red-600">email is required</p>}
                 </div>
 
-                <button type="submit" className="bg-color2 rounded-3xl p-4 font-medium text-xl">log in</button>
+                <div>
+                    <div className="flex items-center justify-between">
+                        <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                        Password
+                        </label>
+                    </div>
+                    <div className="mt-2">
+                        <Input
+                        id="password"
+                        type="password"
+                        {...register("password", {
+                            required: true
+                        })}
+                        />
+                    </div>
+                    {errors.password && <p className="text-red-600">password is required</p>}
+                </div>
+
+                <div>
+                    <button
+                        type="submit"
+                        className="flex w-80 justify-center rounded-md bg-color2 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-color3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                        Sign in
+                    </button>
+                </div>
             </form>
         </div>
     )
