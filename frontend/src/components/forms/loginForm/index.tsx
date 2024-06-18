@@ -5,6 +5,8 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Input } from "@/components/Input"
 
+import { Inputs } from "@/interface"
+
 
 type props = {
     active: boolean,
@@ -12,9 +14,9 @@ type props = {
 
 export default function Login( {active}: props ) {
 
-    const { register, handleSubmit, formState: {errors} } = useForm()
+    const { register, handleSubmit, formState: {errors} } = useForm<Inputs>()
     const [err, setErr] = useState(false)
-    const [typeError, serTypeError] = useState()
+    const [typeError, setTypeError] = useState<string>('')
     const router = useRouter()
 
     const onSubmit = handleSubmit( async (data) => {
@@ -27,11 +29,11 @@ export default function Login( {active}: props ) {
             credentials: 'include'
         })
 
-        const result = await res.json()
+        const response = await res.json()
 
         if(res.status === 400){
             setErr(true)
-            serTypeError(result.error)
+            setTypeError(response.error)
         }
         if(res.ok) router.push('/')
 
@@ -40,11 +42,12 @@ export default function Login( {active}: props ) {
     })
 
 
+
     return(
         
         <div className={` ${active ? 'w-0' : 'w-full'} flex flex-col justify-center items-center left-90 right-0 transition-all duration-300`}>
-            <form className={`${active ? 'hidden' : ''} flex flex-col space-y-10`} onSubmit={onSubmit}>
-                {err && <span className="text-center font-semibold text-slate-500">{typeError}</span>}
+            <form className={`${active ? 'hidden' : ''} flex flex-col space-y-5`} onSubmit={onSubmit}>
+                {err && <span className="text-center font-semibold text-red-600">{typeError}</span>}
 
                 <div>
                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -52,12 +55,14 @@ export default function Login( {active}: props ) {
                     </label>
                     <div className="mt-2">
                         <Input
-                        id="email"
                         {...register("email", {
-                            required: true
+                            required: {
+                                value: true,
+                                message: "Please enter your email address"
+                            }
                         })}/>
                     </div>
-                    {errors.email && <p className="text-red-600">email is required</p>}
+                    {errors.email && <p className="text-red-600">{errors.email?.message}</p>}
                 </div>
 
                 <div>
@@ -71,11 +76,14 @@ export default function Login( {active}: props ) {
                         id="password"
                         type="password"
                         {...register("password", {
-                            required: true
+                            required: {
+                                value: true,
+                                message: "Please enter the password"
+                            }
                         })}
                         />
                     </div>
-                    {errors.password && <p className="text-red-600">password is required</p>}
+                    {errors.password && <p className="text-red-600">{errors.password?.message}</p>}
                 </div>
 
                 <div>
