@@ -5,14 +5,17 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Input } from "@/components/Input"
 
+import { Inputs } from "@/interface"
+
 type props = {
     active: boolean
 }
 
 export default function Register({active}: props) {
 
-    const { register, handleSubmit, formState: {errors} } = useForm()
+    const { register, handleSubmit, formState: {errors} } = useForm<Inputs>()
     const [err, setErr] = useState(false)
+    const [typeError, setTypeError] = useState<string>('')
     const router = useRouter()
 
     const onSubmit = handleSubmit( async (data) => {
@@ -25,9 +28,12 @@ export default function Register({active}: props) {
             credentials: 'include'
         })
 
-        await res.json()
+        const response = await res.json()
 
-        if(res.status === 403) setErr(true)
+        if(res.status === 403) {
+            setErr(true)
+            setTypeError(response.error)
+        }
         
         if(res.ok) router.push('/')
 
@@ -37,9 +43,9 @@ export default function Register({active}: props) {
 
     return(
         <div className={` ${!active ? 'w-0' : 'w-full'} flex flex-col justify-center items-center left-0 rigth-90 transition-all duration-300`}>
-            <form onSubmit={onSubmit} className={`${active ? '' : 'hidden'} flex flex-col space-y-2 py-10`}>
+            <form onSubmit={onSubmit} className={`${active ? '' : 'hidden'} flex flex-col space-y-5`}>
 
-                {err && <span className="text-center font-semibold text-slate-500">The email is already in use</span>}
+                {err && <span className="text-center font-semibold text-red-600">{typeError}</span>}
                 
                 <div>
                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -49,11 +55,14 @@ export default function Register({active}: props) {
                         <Input
                         type="text"
                         {...register("name", {
-                            required: true
+                            required: {
+                                value: true,
+                                message: "Please enter your name"
+                            }
                         })}
                         />
                     </div>
-                    {errors.email && <p className="text-red-600">email is required</p>}
+                    {errors.name && <p className="text-red-600">{errors.name?.message}</p>}
                 </div>
                 <div>
                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -63,11 +72,14 @@ export default function Register({active}: props) {
                         <Input
                         type="text"
                         {...register("email", {
-                            required: true
+                            required: {
+                                value: true,
+                                message: "Please enter your email address"
+                            }
                         })}
                         />
                     </div>
-                    {errors.email && <p className="text-red-600">email is required</p>}
+                    {errors.email && <p className="text-red-600">{errors.email.message}</p>}
                 </div>
 
                 <div>
@@ -80,11 +92,14 @@ export default function Register({active}: props) {
                         <Input
                         type="text"
                         {...register("password", {
-                            required: true
+                            required: {
+                                value: true,
+                                message: "Please enter your password"
+                            }
                         })}
                         />
                     </div>
-                    {errors.password && <p className="text-red-600">password is required</p>}
+                    {errors.password && <p className="text-red-600">{errors.password.message}</p>}
                 </div>
 
                 <div>
