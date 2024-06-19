@@ -1,7 +1,5 @@
 <img src='./frontend/public/PIO.png' width="400">
 
-# PIO
-
 ## Description
 
 PIO is a project designed for learning, full-stack development, database management, CRUD requests, and frontend development. Developing this social network is not as complex as it would be at a larger scale, where more extensive data management and microservices would be required. However, it would still involve significant work, such as user registration, login, user authentication, and protected routes.
