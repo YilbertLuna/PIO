@@ -1,0 +1,85 @@
+services:
+  postgresql:
+    container_name: pio_postgres
+    image: postgres:16.0-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - pio_postgresql:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_PASSWORD=admin
+    - POSTGRES_USER=admin
+    - POSTGRES_DB=pio
+    networks:
+      - pio_network
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "admin", "-d", "pio"]
+      interval: 10s
+      retries: 5
+    restart: always
+
+  webserver:
+    container_name: pio_webserver
+    image: pio_webserver
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    ports:
+      - 6060:6060
+    develop:
+      watch:
+        - action: sync
+          path: ./backend
+          target: /app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./backend/package.json
+    command: ["npm", "run", "start:dev"]
+    env_file:
+      - ./backend/.env
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    networks:
+      - pio_network
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:6060/"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+
+  webapp:
+    container_name: pio_webapp
+    image: pio_webapp
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    ports:
+      - 3000:3000
+    develop:
+      watch:
+        - action: sync
+          path: ./frontend
+          target: /app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./frontend/package.json
+    command: ["npm", "run", "dev"]
+    env_file:
+      - ./frontend/.env
+    depends_on:
+      webserver:
+        condition: service_healthy
+    networks:
+      - pio_network
+
+networks:
+  pio_network:
+    name: pio_network
+    driver: bridge
+
+volumes:
+  pio_postgresql:
+    name: pio_postgresql
