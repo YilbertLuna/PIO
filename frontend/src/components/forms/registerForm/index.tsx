@@ -14,8 +14,7 @@ type props = {
 export default function Register({active}: props) {
 
     const { register, handleSubmit, formState: {errors} } = useForm<Inputs>()
-    const [err, setErr] = useState(false)
-    const [typeError, setTypeError] = useState<string>('')
+    const [typeError, setTypeError] = useState<[string]>([''])
     const router = useRouter()
 
     const onSubmit = handleSubmit( async (data) => {
@@ -30,10 +29,7 @@ export default function Register({active}: props) {
 
         const response = await res.json()
 
-        if(res.status === 403) {
-            setErr(true)
-            setTypeError(response.error)
-        }
+        if(res.status === 403) setTypeError(response.error)
         
         if(res.ok) router.push('/')
 
@@ -45,8 +41,10 @@ export default function Register({active}: props) {
         <div className={` ${!active ? 'w-0' : 'w-full'} flex flex-col justify-center items-center left-0 rigth-90 transition-all duration-300`}>
             <form onSubmit={onSubmit} className={`${active ? '' : 'hidden'} flex flex-col space-y-5`}>
 
-                {err && <span className="text-center font-semibold text-red-600">{typeError}</span>}
-                
+                {typeError?.map((error, i) => (
+                    <p className="font-semibold text-red-600 text-center" key={i}>{error}</p>
+                ))}
+
                 <div>
                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                         User name
