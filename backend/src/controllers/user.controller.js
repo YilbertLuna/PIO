@@ -8,7 +8,7 @@ export const register = async (req, res) => {
         const { name, email, password } = req.body
 
         // validate data
-        if(!name | !email | !password) return res.status(403).json({error: 'Fill in the fields'})
+        if(!name | !email | !password) return res.status(403).json({error: ['Fill in the fields']})
 
         // validate email
         const user = await users.findOne({
@@ -17,7 +17,7 @@ export const register = async (req, res) => {
             }
         })
 
-        if(user) return res.status(403).json({error: 'User already exists'})
+        if(user) return res.status(403).json({error: [ 'User already exists']})
 
         const cryptPassword = await bcrypt.hash(password, 10)
 
@@ -33,13 +33,7 @@ export const register = async (req, res) => {
         //save token on cookie
         res.cookie('token', token)
 
-        res.status(201).json({
-            id: newUser.id,
-            name: newUser.name,
-            email: newUser.email,
-            followers: newUser.followers,
-            following: newUser.following,
-        })
+        res.sendStatus(201)
 
     } catch (error) {
         res.status(400).json({ error: error})
@@ -54,7 +48,7 @@ export const login = async (req, res) => {
         const { email, password } = req.body
 
         // validate data
-        if(!email | !password) return res.status(403).json({error: 'Fill in the fields'})
+        if(!email | !password) return res.status(403).json({error: ['Fill in the fields']})
 
         // validate password
         const findUser = await users.findOne({
@@ -63,25 +57,18 @@ export const login = async (req, res) => {
             }
         })
 
-        if(!findUser) return res.status(400).json({error: 'email is dont exist'})
+        if(!findUser) return res.status(403).json({error: ['email is dont exist']})
 
         const isPassword = await bcrypt.compare(password, findUser.password)
 
-        if(!isPassword) return res.status(400).json({error: 'password is invalid'})
+        if(!isPassword) return res.status(403).json({error: ['password is invalid']})
         
         // created token
         const token = await createdAccessToken({id: findUser.id})
         // save token on cookie
         res.cookie('token', token)
         
-        res.status(200).json({
-            id: findUser.id,
-            name: findUser.name,
-            email: findUser.email,
-            followers: findUser.followers,
-            following: findUser.following,
-            created_at: findUser.createdAt
-        })
+        res.sendStatus(200)
 
     } catch (error) {
         res.status(400).json({ error: error})
@@ -96,9 +83,17 @@ export const profile = async (req, res) => {
         }
     })
 
-    if(!userFound) return res.status(404).json({ error: 'User not found' })
+    if(!userFound) return res.status(403).json({ error: ['User not found'] })
 
-    return res.status(200).json({ userFound: userFound })
+    return res.status(200).json({
+        name: userFound.name,
+        email: userFound.email,
+        bio: userFound.bio,
+        id: userFound.id,
+        createdAt: userFound.createdAt,
+        updatedAt: userFound.updatedAt,
+
+    })
 }
 
 export const logout = (req, res) => {
@@ -117,7 +112,7 @@ export const getUsers = async (req, res) => {
         
         const allUsers = await users.findAll()
 
-        if(allUsers.length <= 0) return res.status(403).json({alert: 'User already exists'})
+        if(allUsers.length <= 0) return res.status(403).json({error: ['User already exists']})
 
         res.status(200).json(allUsers)
 
@@ -139,8 +134,8 @@ export const updateUser = async (req, res) => {
 
         await user.save()
 
-        res.json(user)
-        
+        res.sendStatus(200)
+                
     } catch (error) {
         res.status(400).json({ error: error})
     }
