@@ -33,7 +33,7 @@ export const register = async (req, res) => {
         //save token on cookie
         res.cookie('token', token)
 
-        res.sendStatus(201)
+        res.status(200).json(newUser)
 
     } catch (error) {
         res.status(400).json({ error: error})
@@ -68,7 +68,7 @@ export const login = async (req, res) => {
         // save token on cookie
         res.cookie('token', token)
         
-        res.sendStatus(200)
+        res.status(200).json(findUser)
 
     } catch (error) {
         res.status(400).json({ error: error})
