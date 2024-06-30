@@ -90,6 +90,8 @@ export const profile = async (req, res) => {
         email: userFound.email,
         bio: userFound.bio,
         id: userFound.id,
+        followers: userFound.followers,
+        followings: userFound.following,
         createdAt: userFound.createdAt,
         updatedAt: userFound.updatedAt,
 
