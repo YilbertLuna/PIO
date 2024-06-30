@@ -4,10 +4,12 @@ export interface Inputs {
     password: string,
 }
 export interface User {
-    id: number,
+    id: string,
     name: string,
     email: string,
     bio: string,
+    followers: number,
+    followings: number,
     createdAt: string,
     updatedAt: string,
 }
