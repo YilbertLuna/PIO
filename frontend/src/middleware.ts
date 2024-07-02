@@ -27,5 +27,6 @@ export const config = {
         '/profile',
         '/explore',
         '/notifications',
+        '/edit-profile',
     ],
 }
