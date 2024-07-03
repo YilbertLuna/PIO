@@ -2,7 +2,8 @@
 
 import Image from "next/image"
 import { useState, useEffect } from "react";
-import { FiHeart } from "react-icons/fi";
+import Link from 'next/link'
+// import { FiHeart } from "react-icons/fi";
 
 import { User } from "@/interface";
 
@@ -51,7 +52,7 @@ export default function Profile(): JSX.Element {
                   <p>Following {userInfo?.followings}</p>
               </div>
 
-              <span className="bg-color2 rounded-xl p-4 text-lg font-semibold">edit profile</span>
+              <Link href="/edit-profile" className="bg-color2 rounded-xl p-4 text-lg font-semibold">Edit Profile</Link>
           </div>
             
           <div className="flex flex-col justify-center items-center w-80 sm:w-[460px] space-y-5 shadow-md p-10 rounded-xl bg-clip-border bg-color1">
