@@ -74,3 +74,21 @@ export async function deletePublication (req, res) {
         res.status(400).json({error: 'error deleting publication'})
     }
 }
+
+export async function likePublication (req, res) {
+    try {
+
+        const { id } = req.params
+
+        const findPublication = await publications.findByPk(id)
+
+        findPublication.likes += 1
+
+        await findPublication.save()
+
+        res.sendStatus(200)
+        
+    } catch (error) {
+        res.status(400).json({error: 'error liking publication'})
+    }
+}
