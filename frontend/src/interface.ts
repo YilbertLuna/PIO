@@ -13,3 +13,12 @@ export interface User {
     createdAt: string,
     updatedAt: string,
 }
+export interface publications {
+    id: string,
+    content: string,
+    likes: number,
+    createdAt: string,
+    updatedAt: string,
+    userId: string,
+    User: User
+}

@@ -3,13 +3,16 @@
 import Image from "next/image"
 import { useState, useEffect } from "react";
 import Link from 'next/link'
-// import { FiHeart } from "react-icons/fi";
 
-import { User } from "@/interface";
+import { User, publications } from "@/interface";
+import { Post } from "@/components/post";
 
 export default function Profile(): JSX.Element {
 
     const [userInfo, setUserInfo] = useState<User>()
+    const [post, setPost] = useState<publications[]>()
+    const [success, setSuccess] = useState<boolean>(false)
+    const [err, setErr] = useState()
 
     useEffect(() => {
 
@@ -30,7 +33,26 @@ export default function Profile(): JSX.Element {
 
     }, [])
 
-    console.log(userInfo)
+    useEffect(() => {
+      async function getPost() {
+        const res = await fetch('http://localhost:6060/api/getMyPublications', {
+          method: 'GET',
+          credentials: 'include',
+        })
+        const data = await res.json()
+  
+        if(res.status === 200) {
+          setPost(data)
+          setSuccess(true)
+          return
+        }
+  
+        setSuccess(false)
+        setErr(data)
+      }
+  
+      getPost()
+    }, [])
 
     return(
       <div className="flex flex-col justify-center items-center space-y-10 md:ml-40 ml-4 mr-4 mt-28 md:mt-2">
@@ -55,55 +77,32 @@ export default function Profile(): JSX.Element {
               <Link href="/edit-profile" className="bg-color2 rounded-xl p-4 text-lg font-semibold">Edit Profile</Link>
           </div>
             
-          <div className="flex flex-col justify-center items-center w-80 sm:w-[460px] space-y-5 shadow-md p-10 rounded-xl bg-clip-border bg-color1">
-            
-            <p>There are no posts</p>
-            {/* <div className="relative flex flex-col gap-2">
-              <div className="flex items-center gap-4">
-                <Image src="/FotoPerfil.jpg" alt="PIO logo" width={50} height={50} className='rounded-full' />      
-                <h5 className="block font-sans text-lg antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">Yilbert Luna | Mayo-21-2024 </h5>
-              </div>
-            <div className="flex gap-4">
-              <div>
-                <p className="block font-sans text-base antialiased font-normal leading-relaxed text-gray-600">
-                  The key to more success is to have a lot of pillows. Put it this
-                  way, it took me twenty five years to get these plants, twenty
-                  five years of blood sweat and tears, and Im never giving
-                  up, Im just getting started. Im up to something. Fan
-                  luv.
-                </p>
-                <div className='flex flex-row items-center gap-3'>
-                  <FiHeart className='hover:text-red-500' />
-                  <p>0</p>
+          {success === false && (
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-4">
+                  <p className="text-red-600 text-center">{err}</p>
                 </div>
               </div>
-            </div>
-          </div>
-            
-          <div className="relative flex flex-col gap-2">
-            <div className="flex items-center gap-4">
-              <Image src="/FotoPerfil.jpg" alt="PIO logo" width={50} height={50} className='rounded-full' />      
-              <h5 className="block font-sans text-lg antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">Yilbert Luna | Mayo-21-2024 </h5>
-            </div>
-            <div className="flex gap-4">
-              <div>
-                <p className="block font-sans text-base antialiased font-normal leading-relaxed text-gray-600">
-                  The key to more success is to have a lot of pillows. Put it this
-                  way, it took me twenty five years to get these plants, twenty
-                  five years of blood sweat and tears, and Im never giving
-                  up, Im just getting started. Im up to something. Fan
-                  luv.
-                </p>
-                <div className='flex flex-row items-center gap-3'>
-                  <FiHeart className='hover:text-red-500' />
-                  <p>0</p>
+            )
+          }
+
+          {success && post?.length === 0 && (
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-4">
+                  <p className="text-xl font-semibold text-center">No hay publicaciones</p>
                 </div>
               </div>
-            </div>
-          </div> */}
-
-        </div>
-
+            )
+          }
+          {success && post?.map((post, id) => {
+              return(
+                <div key={id} className="flex flex-col justify-center items-center w-80 sm:w-[460px] space-y-5 shadow-md p-10 rounded-xl bg-clip-border bg-color1">
+                  <Post content={post.content} name={post?.User.name} userId={post.userId} likes={post.likes}/>
+                </div>
+              
+              )
+            })
+          }
     </div>
   )
 }
