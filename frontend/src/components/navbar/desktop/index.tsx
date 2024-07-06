@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { FiHome, FiSearch, FiHeart, FiUser } from "react-icons/fi";
 import { Sidebar, Divider } from 'keep-react'
-import ModalComponent from '@/components/modal';
+import { FiPlusCircle } from 'react-icons/fi'
 import ButtonLogout from '@/components/logout';
 
 export default function NavBarDesktop(): JSX.Element {
@@ -24,14 +24,6 @@ export default function NavBarDesktop(): JSX.Element {
                     <Link href="/explore" className={`${pathname === '/explore' ? 'text-white' : 'text-slate-400'} flex items-center gap-2 `}>
                        <FiSearch className='text-3xl' />
                     </Link>
-                </Sidebar.Item>
-
-                <Sidebar.Item>
-                    <span className='flex items-center gap-2 text-slate-400 cursor-pointer'>
-                        <span className='text-3xl'>
-                            <ModalComponent />
-                        </span>
-                    </span>
                 </Sidebar.Item>
                 
                 <Sidebar.Item>

@@ -5,13 +5,15 @@ export async function createdPublication(req,res) {
     try {
         const {publication} = req.body
         
-        if(!publication) return res.status(403).json({error: 'Content is required'})
+        const User = req.User.id
 
-        const findUserCreator = await users.findByPk(req.User.id)
+        if(!publication) return res.status(403).json({error: ['Content is required']})
+
+        const findUserCreator = await users.findByPk(User)
 
         const newPublication = await publications.create({
             content: publication,
-            userId: req.User.id
+            userId: User
         })
 
         res.status(200).json({user: findUserCreator, publication: [newPublication]})

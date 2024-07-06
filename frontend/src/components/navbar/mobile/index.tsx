@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { FiHome, FiSearch, FiHeart, FiUser } from "react-icons/fi";
 import { usePathname } from "next/navigation";
-import ModalComponent from "@/components/modal";
 
 export default function NavBarMovile(): JSX.Element {
 
@@ -18,8 +17,6 @@ export default function NavBarMovile(): JSX.Element {
           <FiSearch />
       </Link>
 
-      <ModalComponent />
-      
       <Link href='/notifications' className={`${pathname === '/notifications' ? 'text-white' : 'text-slate-400'}`}>
           <FiHeart />
       </Link>
