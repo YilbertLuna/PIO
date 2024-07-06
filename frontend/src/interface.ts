@@ -3,6 +3,10 @@ export interface Inputs {
     email: string,
     password: string,
 }
+
+export interface textArea {
+    publication: string
+}
 export interface User {
     id: string,
     name: string,
