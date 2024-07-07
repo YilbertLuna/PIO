@@ -2,15 +2,12 @@
 
 import { useForm } from "react-hook-form"
 import { useState } from "react"
-import { useRouter } from "next/navigation"
-
 import { textArea } from "@/interface"
 
 export function CreatePost() {
     
     const { register, handleSubmit, formState: {errors} } = useForm<textArea>()
     const [typeError, setTypeError] = useState<[string]>([''])
-    const router = useRouter()
 
     const onSubmit = handleSubmit( async (data) => {
         const res = await fetch('http://localhost:6060/api/createPublication', {
@@ -19,14 +16,15 @@ export function CreatePost() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            credentials: 'include'
+            credentials: 'include',
+            redirect: 'manual'
         })
 
         const response = await res.json()
 
         if(res.status === 403) setTypeError(response.error)
 
-        router.refresh()
+        if(res.ok) window.location.reload()
     })
 
     return(
