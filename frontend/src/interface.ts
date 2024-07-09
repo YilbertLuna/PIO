@@ -5,7 +5,8 @@ export interface Inputs {
 }
 
 export interface textArea {
-    publication: string
+    publication: string,
+    bio: string
 }
 export interface User {
     id: string,
