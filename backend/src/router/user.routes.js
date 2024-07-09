@@ -13,6 +13,6 @@ userRouter.post('/logout', logout)
 userRouter.get('/getUsers', getUsers)
 userRouter.get('/profile', authRequired, profile)
 
-userRouter.put('/updateUser/:id', authRequired, updateUser)
+userRouter.put('/updateUser', authRequired, updateUser)
 
 export default userRouter

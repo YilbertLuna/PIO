@@ -126,17 +126,19 @@ export const getUsers = async (req, res) => {
 export const updateUser = async (req, res) => {
 
     try {
-        const { id } = req.params
+        const id = req.User.id
         const { name, bio, } = req.body
 
         const user = await users.findByPk(id)
 
+        if(!user) return res.status(404).json({error: ['User not found']})
+        
         user.name = name
         user.bio = bio
 
         await user.save()
 
-        res.sendStatus(200)
+        res.status(200).json(user)
                 
     } catch (error) {
         res.status(400).json({ error: error})
