@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import { publications } from "@/interface";
 import { Post } from "@/components/post";
-import { CreatePost } from "@/components/publication";
+import { CreatePost } from "@/components/createdPost";
 import { User } from "@/interface";
 
 export default function Home() {
