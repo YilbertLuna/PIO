@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { FiHome, FiSearch, FiHeart, FiUser } from "react-icons/fi";
 import { Sidebar, Divider } from 'keep-react'
-import { FiPlusCircle } from 'react-icons/fi'
 import ButtonLogout from '@/components/logout';
 
 export default function NavBarDesktop(): JSX.Element {
