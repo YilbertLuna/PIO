@@ -132,9 +132,9 @@ export const updateUser = async (req, res) => {
         const user = await users.findByPk(id)
 
         if(!user) return res.status(404).json({error: ['User not found']})
-        
-        user.name = name
-        user.bio = bio
+
+        name === '' ? user.name = user.name : user.name = name
+        bio === '' ? user.bio = user.bio : user.bio = bio
 
         await user.save()
 
