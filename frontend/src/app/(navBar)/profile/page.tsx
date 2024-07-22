@@ -54,6 +54,17 @@ export default function Profile(): JSX.Element {
       getPost()
     }, [])
 
+    async function deletePost(id: any) {
+      const res = await fetch(`http://localhost:6060/api/deletePublication/${id}`, {
+        method: 'DELETE',
+        credentials: 'include',
+      })
+
+      const data = await res.json()
+
+      console.log(data)
+    }
+
     return(
       <div className="flex flex-col justify-center items-center space-y-10 md:ml-40 ml-4 mr-4 mt-28 md:mt-2">
           
@@ -96,7 +107,12 @@ export default function Profile(): JSX.Element {
           }
           {success && post?.map((post, id) => {
               return(
-                <div key={id} className="flex flex-col justify-center items-center w-80 sm:w-[460px] space-y-5 shadow-md p-10 rounded-xl bg-clip-border bg-color1">
+                <div key={id} className="flex flex-col w-80 sm:w-[460px] space-y-1 shadow-md p-10 rounded-xl bg-clip-border bg-color1">
+                  <div className="flex justify-end items-end">
+                    <form onSubmit={(e) => deletePost(post.id)}>
+                      <button type="submit" className="text-white bg-color3 rounded-2xl p-2">Deleted</button>
+                    </form>
+                  </div>
                   <Post content={post.content} name={post?.User.name} userId={post.userId} likes={post.likes}/>
                 </div>
               
